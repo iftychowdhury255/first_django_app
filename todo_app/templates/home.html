@@ -2,4 +2,14 @@
 
 {% block content %}
     <h2>This is our backend home page</h2>
+    {% for d in data %}
+    <ul>
+        <li>Name : {{ d.name }}</li>
+        <li>Age : {{ d.age }}</li>
+        <li>Email : {{ d.address }}</li>
+        <li>Are you Maried : {{ d.isMaried }}</li>
+    </ul>
+    {% endfor %}
+
+
 {% endblock %}
