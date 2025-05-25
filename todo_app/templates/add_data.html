@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Success!</strong> {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    {% endif %}
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <h1>Our Form</h1>
+
+            <form method="POST" action=''>
+                {% csrf_token %}
+
+                <div class="mb-3">
+                    <input type="text" name="name" class="form-control" placeholder="Name">
+                </div>
+
+                <div class="mb-3">
+                    <input type="email" name="email" class="form-control" placeholder="Email">
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" name="address" class="form-control" placeholder="Address">
+                </div>
+
+                <div class="mb-3">
+                    <input type="number" name="age" class="form-control" placeholder="Age">
+                </div>
+
+                <div class="form-check mb-3">
+                    <input type="checkbox" name="isMaried" class="form-check-input" id="isMaried">
+                    <label class="form-check-label" for="isMaried">Married</label>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>
+{% endblock %}
